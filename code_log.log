@@ -1,0 +1,1912 @@
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA.
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M6)
+      Licensed to CARNEGIE MELLON UNIVERSITY - SFA T&R, Site 70082262.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+
+      SAS/STAT 15.1
+      SAS/ETS 15.1
+      SAS/OR 15.1
+      SAS/IML 15.1
+      SAS/QC 15.1
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           1.04 seconds
+      cpu time            0.82 seconds
+
+1    %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+2
+3    proc import outfile="&outpath\ratings.csv"
+                 -------
+                 1
+ERROR: ""D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv"" is not a valid name.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING 1-322: Assuming the symbol OUT was misspelled as outfile.
+
+4        dbms=csv out=ratings;
+5    run;
+
+
+6    %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+7
+8    proc import outfile="&outpath\ratings.csv"
+                 -------
+                 1
+ERROR: ""D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv"" is not a valid name.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING 1-322: Assuming the symbol OUT was misspelled as outfile.
+
+9        dbms=csv out=ratings;
+10   run;
+
+
+11   %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+12
+13   proc import datafile="&outpath\ratings.csv"
+14       dbms=csv out=ratings;
+15   run;
+
+ERROR: File is in use, D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv.
+ERROR: Import unsuccessful.  See SAS Log for details.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+
+
+
+16   %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+17
+18   proc import datafile="&outpath\ratings.csv"
+19       dbms=csv out=ratings;
+20   run;
+
+Name  is not a valid SAS name.
+Problems were detected with provided names.  See LOG.
+21    /**********************************************************************
+22    *   PRODUCT:   SAS
+23    *   VERSION:   9.4
+24    *   CREATOR:   External File Interface
+25    *   DATE:      02APR23
+26    *   DESC:      Generated SAS Datastep Code
+27    *   TEMPLATE SOURCE:  (None Specified.)
+28    ***********************************************************************/
+29       data WORK.RATINGS    ;
+30       %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+31       infile 'D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv' delimiter = ',' MISSOVER DSD
+31 ! lrecl=32767 firstobs=2 ;
+32          informat VAR1 best32. ;
+33          informat user_id best32. ;
+34          informat movie $33. ;
+35          informat rating best32. ;
+36          format VAR1 best12. ;
+37          format user_id best12. ;
+38          format movie $33. ;
+39          format rating best12. ;
+40       input
+41                   VAR1
+42                   user_id
+43                   movie  $
+44                   rating
+45       ;
+46       if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+47       run;
+
+NOTE: The infile 'D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv' is:
+      Filename=D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=35988853,
+      Last Modified=17Feb2023:14:32:20,
+      Create Time=02Apr2023:16:14:31
+
+NOTE: 907085 records were read from the infile 'D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv'.
+      The minimum record length was 18.
+      The maximum record length was 125.
+NOTE: The data set WORK.RATINGS has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.34 seconds
+
+
+907085 rows created in WORK.RATINGS from D:\CMU\Spring 2023\AI ENG\SAS demo\ratings.csv.
+
+
+
+NOTE: WORK.RATINGS data set was successfully created.
+NOTE: The data set WORK.RATINGS has 907085 observations and 4 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.40 seconds
+      cpu time            0.39 seconds
+
+
+
+48
+49   proc import datafile="&outpath\ratings.csv"
+50       dbms=csv out=ratings;
+51   run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+52
+
+
+53   proc contents data=ratingsVARNUM;
+NOTE: Writing HTML Body file: sashtml.htm
+ERROR: File WORK.RATINGSVARNUM.DATA does not exist.
+54   run;
+
+NOTE: Statements not processed because of errors noted above.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.31 seconds
+      cpu time            0.25 seconds
+
+NOTE: The SAS System stopped processing this step because of errors.
+
+55   %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+56
+57   proc import datafile="&outpath\ratings.csv"
+58       dbms=csv out=ratings;
+59   run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+60
+
+
+61   proc contents data=ratings;
+62   run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+
+
+63   proc print data=ratings(obs=10);
+64       var user_id movie rating;
+65   run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+66   %let name=toy+story;
+67   proc print data=ratingmovie(obs=10) label;
+ERROR: File WORK.RATINGMOVIE.DATA does not exist.
+68       where movie like "&name%";
+WARNING: No data sets qualify for WHERE processing.
+69       var user_id movie rating comment;
+70       label movie="&name series";
+71   run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+72   %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+73
+74   proc import datafile="&outpath\ratings.csv"
+75       dbms=csv out=ratings;
+76   run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+77
+
+
+78   proc contents data=ratings;
+79   run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+
+
+80
+81   proc print data=ratings(obs=10);
+82       var user_id movie rating;
+83       format user_id COMMA15.;
+84   run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+85
+86   data ratingmovie;
+87       set ratings;
+88       drop VAR1;
+89       if rating=5 then comment="excellent";
+90       else if rating=4 then comment="good";
+91       else if rating=3 then comment="medium";
+92       else if rating=2 then comment="not good";
+93       else if rating=1 then comment="bad";
+94   run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.12 seconds
+
+
+95
+96   proc print data=ratingmovie(obs=10);
+97   run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+98
+99   %let name=toy+story;
+100  proc print data=ratingmovie(obs=10) label;
+101      where movie like "&name%";
+102      var user_id movie rating comment;
+103      label movie="&name series";
+104  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.03 seconds
+
+
+105  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+106
+107  proc import datafile="&outpath\ratings.csv"
+108      dbms=csv out=ratings;
+109  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+110
+
+
+111  proc contents data=ratings;
+112  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.03 seconds
+
+
+113
+114  proc print data=ratings(obs=10);
+115      var user_id movie rating;
+116      format user_id COMMA15.;
+117  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+118
+119  data ratingmovie;
+120      set ratings;
+121      drop VAR1;
+122      if rating=5 then comment="excellent";
+123      else if rating=4 then comment="good";
+124      else if rating=3 then comment="medium";
+125      else if rating=2 then comment="not good";
+126      else if rating=1 then comment="bad";
+127  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+128
+129  proc print data=ratingmovie(obs=10);
+130  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+131
+132  %let name=toy+story;
+133  proc print data=ratingmovie(obs=10) label;
+134      where movie like "&name%";
+135      var user_id movie rating comment;
+136      label movie="&name series";
+137  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+138
+139  proc sort data=ratings out=ratings_sortID;      /*  15d */
+140      by user_id;
+141  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.39 seconds
+
+
+142  data userinfor;
+143      set ratings_sortID;
+144      keep user_id num_movies avg_rating;
+145      by user_id;
+146      retain num_movies avg_rating;           /*  15a but retain is not nessary since my sum
+146! statement auto retain    */
+147      if First.userID then num_movies=0;  /*  15c */
+148      totaltime+1;                    /*  15b */
+149      if First.userID then avg_rating=0;      /*  15c */
+150      games+rating;
+151      if Last.userID then avg_rating=avg_rating/num_movies;
+152  run;
+
+NOTE: Variable First.userID is uninitialized.
+NOTE: Variable Last.userID is uninitialized.
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 907085 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.09 seconds
+
+
+153  proc print data=userinfor(obs=5);
+154  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+155  proc means data=userinfor;
+156  run;
+
+NOTE: There were 907085 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.21 seconds
+
+
+157  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+158
+159  proc import datafile="&outpath\ratings.csv"
+160      dbms=csv out=ratings;
+161  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+162
+
+
+163  proc contents data=ratings;
+164  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+165
+166  proc print data=ratings(obs=10);
+167      var user_id movie rating;
+168      format user_id COMMA15.;
+169  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+170
+171  data ratingmovie;
+172      set ratings;
+173      drop VAR1;
+174      if rating=5 then comment="excellent";
+175      else if rating=4 then comment="good";
+176      else if rating=3 then comment="medium";
+177      else if rating=2 then comment="not good";
+178      else if rating=1 then comment="bad";
+179  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+180
+181  proc print data=ratingmovie(obs=10);
+182  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+
+
+183
+184  %let name=toy+story;
+185  proc print data=ratingmovie(obs=10) label;
+186      where movie like "&name%";
+187      var user_id movie rating comment;
+188      label movie="&name series";
+189  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+
+
+190
+191  proc sort data=ratings out=ratings_sortID;      /*  15d */
+192      by user_id;
+193  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.39 seconds
+
+
+194
+195  data userinfor;
+196      set ratings_sortID;
+197      keep user_id num_movies avg_rating;
+198      by user_id;
+199      retain num_movies avg_rating;           /*  15a but retain is not nessary since my sum
+199! statement auto retain    */
+200      if First.user_id then num_movies=0; /*  15c */
+201      totaltime+1;                    /*  15b */
+202      if First.user_id then avg_rating=0;     /*  15c */
+203      games+rating;
+204      if Last.user_id then avg_rating=avg_rating/num_movies;
+205  run;
+
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=478642 user_id=3 movie=constantine+2005 rating=3 FIRST.user_id=0 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=3 games=11 _ERROR_=1 _N_=3
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=322376 user_id=4 movie=avatar+2009 rating=4 FIRST.user_id=0 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=6 games=23 _ERROR_=1 _N_=6
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=500770 user_id=6 movie=stroszek+1977 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=7 games=26 _ERROR_=1 _N_=7
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=856903 user_id=7 movie=salems+lot+1979 rating=4 FIRST.user_id=0 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=12 games=44 _ERROR_=1 _N_=12
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=677768 user_id=8 movie=our+music+2004 rating=4 FIRST.user_id=0 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=14 games=53 _ERROR_=1 _N_=14
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=254360 user_id=9 movie=secret+ballot+2001 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=15 games=56 _ERROR_=1 _N_=15
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=679919 user_id=10 movie=total+recall+1990 rating=4 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=16 games=60 _ERROR_=1 _N_=16
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=228071 user_id=11 movie=tango+1981 rating=4 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=17 games=64 _ERROR_=1 _N_=17
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=684562 user_id=13 movie=the+man+in+the+gray+flannel+suit+ rating=4 FIRST.user_id=0 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=19 games=71 _ERROR_=1 _N_=19
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=54074 user_id=15 movie=save+the+tiger+1973 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=20 games=74 _ERROR_=1 _N_=20
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=119406 user_id=19 movie=the+batman+superman+movie+worlds+ rating=3 FIRST.user_id=1 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=21 games=77 _ERROR_=1 _N_=21
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=202846 user_id=20 movie=the+hobbit+the+battle+of+the+five rating=4 FIRST.user_id=1 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=22 games=81 _ERROR_=1 _N_=22
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=308293 user_id=21 movie=kevin+hart+im+a+grown+little+man+ rating=3 FIRST.user_id=1 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=23 games=84 _ERROR_=1 _N_=23
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=462526 user_id=23 movie=brokeback+mountain+2005 rating=4 FIRST.user_id=1 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=24 games=88 _ERROR_=1 _N_=24
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=776483 user_id=24 movie=pulp+fiction+1994 rating=5 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=25 games=93 _ERROR_=1 _N_=25
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=686073 user_id=27 movie=homefront+2013 rating=4 FIRST.user_id=0 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=28 games=105 _ERROR_=1 _N_=28
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=55361 user_id=29 movie=36+hours+1964 rating=4 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=29 games=109 _ERROR_=1 _N_=29
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=826534 user_id=31 movie=snow+on+the+pines+2013 rating=3 FIRST.user_id=0 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=32 games=121 _ERROR_=1 _N_=32
+NOTE: Division by zero detected at line 204 column 47.
+VAR1=725811 user_id=32 movie=the+tarnished+angels+1957 rating=4 FIRST.user_id=0 LAST.user_id=1
+num_movies=0 avg_rating=. totaltime=34 games=128 _ERROR_=1 _N_=34
+NOTE: Division by zero detected at line 204 column 47.
+WARNING: Limit set by ERRORS= option reached.  Further errors of this type will not be printed.
+VAR1=68865 user_id=34 movie=day+for+night+1973 rating=5 FIRST.user_id=1 LAST.user_id=1 num_movies=0
+avg_rating=. totaltime=35 games=133 _ERROR_=1 _N_=35
+NOTE: Mathematical operations could not be performed at the following places. The results of the
+      operations have been set to missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      516020 at 204:47
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 907085 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.04 seconds
+      cpu time            2.04 seconds
+
+
+206  proc print data=userinfor(obs=5);
+207  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+208  proc means data=userinfor;
+209  run;
+
+NOTE: There were 907085 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.50 seconds
+
+
+210  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+211
+212  proc import datafile="&outpath\ratings.csv"
+213      dbms=csv out=ratings;
+214  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+215
+
+
+216  proc contents data=ratings;
+217  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+218
+219  proc print data=ratings(obs=10);
+220      var user_id movie rating;
+221      format user_id COMMA15.;
+222  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+223
+224  data ratingmovie;
+225      set ratings;
+226      drop VAR1;
+227      if rating=5 then comment="excellent";
+228      else if rating=4 then comment="good";
+229      else if rating=3 then comment="medium";
+230      else if rating=2 then comment="not good";
+231      else if rating=1 then comment="bad";
+232  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+233
+234  proc print data=ratingmovie(obs=10);
+235  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+236
+237  %let name=toy+story;
+238  proc print data=ratingmovie(obs=10) label;
+239      where movie like "&name%";
+240      var user_id movie rating comment;
+241      label movie="&name series";
+242  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+243
+244  proc sort data=ratings out=ratings_sortID;      /*  15d */
+245      by user_id;
+246  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.42 seconds
+
+
+247
+248  data userinfor;
+249      set ratings_sortID;
+250      keep user_id num_movies avg_rating;
+251      by user_id;
+252      retain num_movies avg_rating;           /*  15a but retain is not nessary since my sum
+252! statement auto retain    */
+253      if First.user_id then num_movies=0; /*  15c */
+254      num_movies+1;                   /*  15b */
+255      if First.user_id then avg_rating=0;     /*  15c */
+256      avg_rating+rating;
+257      if Last.user_id;
+258  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 516020 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+259  proc print data=userinfor(obs=5);
+260  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+261  proc means data=userinfor;
+262  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.31 seconds
+
+
+263  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+264
+265  proc import datafile="&outpath\ratings.csv"
+266      dbms=csv out=ratings;
+267  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+268
+
+
+269  proc contents data=ratings;
+270  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+271
+272  proc print data=ratings(obs=10);
+273      var user_id movie rating;
+274      format user_id COMMA15.;
+275  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+276
+277  data ratingmovie;
+278      set ratings;
+279      drop VAR1;
+280      if rating=5 then comment="excellent";
+281      else if rating=4 then comment="good";
+282      else if rating=3 then comment="medium";
+283      else if rating=2 then comment="not good";
+284      else if rating=1 then comment="bad";
+285  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+286
+287  proc print data=ratingmovie(obs=10);
+288  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+289
+290  %let name=toy+story;
+291  proc print data=ratingmovie(obs=10) label;
+292      where movie like "&name%";
+293      var user_id movie rating comment;
+294      label movie="&name series";
+295  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+296
+297  proc sort data=ratings out=ratings_sortID;      /*  15d */
+298      by user_id;
+299  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.36 seconds
+
+
+300
+301  data userinfor;
+302      set ratings_sortID;
+303      keep user_id num_movies avg_rating;
+304      by user_id;
+305      retain num_movies avg_rating;
+306      if First.user_id then num_movies=0;
+307      num_movies+1;
+308      if First.user_id then avg_rating=0;
+309      avg_rating+rating;
+310      if Last.user_id then avg_rating=avg_rating/num_movies;
+311  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 907085 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.09 seconds
+
+
+312  proc print data=userinfor(obs=5);
+313  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+314  proc means data=userinfor;
+315  run;
+
+NOTE: There were 907085 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.54 seconds
+
+
+316  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+317
+318  proc import datafile="&outpath\ratings.csv"
+319      dbms=csv out=ratings;
+320  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+321
+
+
+322  proc contents data=ratings;
+323  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+
+
+324
+325  proc print data=ratings(obs=10);
+326      var user_id movie rating;
+327      format user_id COMMA15.;
+328  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+329
+330  data ratingmovie;
+331      set ratings;
+332      drop VAR1;
+333      if rating=5 then comment="excellent";
+334      else if rating=4 then comment="good";
+335      else if rating=3 then comment="medium";
+336      else if rating=2 then comment="not good";
+337      else if rating=1 then comment="bad";
+338  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+339
+340  proc print data=ratingmovie(obs=10);
+341  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+342
+343  %let name=toy+story;
+344  proc print data=ratingmovie(obs=10) label;
+345      where movie like "&name%";
+346      var user_id movie rating comment;
+347      label movie="&name series";
+348  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+349
+350  proc sort data=ratings out=ratings_sortID;      /*  15d */
+351      by user_id;
+352  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.39 seconds
+
+
+353
+354  data userinfor;
+355      set ratings_sortID;
+356      keep user_id num_movies avg_rating;
+357      by user_id;
+358      retain num_movies avg_rating;
+359      if First.user_id then num_movies=0;
+360      num_movies+1;
+361      if First.user_id then avg_rating=0;
+362      avg_rating+rating;
+363      if Last.user_id;
+364  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 516020 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+365  proc print data=userinfor(obs=5);
+366  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+367  proc means data=userinfor;
+368  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.32 seconds
+
+
+369  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+370
+371  proc import datafile="&outpath\ratings.csv"
+372      dbms=csv out=ratings;
+373  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+374
+
+
+375  proc contents data=ratings;
+376  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+377
+378  proc print data=ratings(obs=10);
+379      var user_id movie rating;
+380      format user_id COMMA15.;
+381  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+382
+383  data ratingmovie;
+384      set ratings;
+385      drop VAR1;
+386      if rating=5 then comment="excellent";
+387      else if rating=4 then comment="good";
+388      else if rating=3 then comment="medium";
+389      else if rating=2 then comment="not good";
+390      else if rating=1 then comment="bad";
+391  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.10 seconds
+
+
+392
+393  proc print data=ratingmovie(obs=10);
+394  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+
+
+395
+396  %let name=toy+story;
+397  proc print data=ratingmovie(obs=10) label;
+398      where movie like "&name%";
+399      var user_id movie rating comment;
+400      label movie="&name series";
+401  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+402
+403  proc sort data=ratings out=ratings_sortID;      /*  15d */
+404      by user_id;
+405  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.35 seconds
+
+
+406
+407  data userinfor;
+408      set ratings_sortID;
+409      keep user_id num_movies avg_rating;
+410      by user_id;
+411      retain num_movies total_rating;
+412      if First.user_id then num_movies=0;
+413      num_movies+1;
+414      if First.user_id then total_rating=0;
+415       total_rating+rating;
+416      if Last.user_id;
+417
+418      avf_rating=total_rating/num_movies;
+419      drop total_rating;
+420
+421  run;
+
+WARNING: The variable avg_rating in the DROP, KEEP, or RENAME list has never been referenced.
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 516020 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+422  proc print data=userinfor(obs=5);
+423  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+424  proc means data=userinfor;
+425  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.20 seconds
+
+
+426  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+427
+428  proc import datafile="&outpath\ratings.csv"
+429      dbms=csv out=ratings;
+430  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+431
+
+
+432  proc contents data=ratings;
+433  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+434
+435  proc print data=ratings(obs=10);
+436      var user_id movie rating;
+437      format user_id COMMA15.;
+438  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+439
+440  data ratingmovie;
+441      set ratings;
+442      drop VAR1;
+443      if rating=5 then comment="excellent";
+444      else if rating=4 then comment="good";
+445      else if rating=3 then comment="medium";
+446      else if rating=2 then comment="not good";
+447      else if rating=1 then comment="bad";
+448  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+449
+450  proc print data=ratingmovie(obs=10);
+451  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+452
+453  %let name=toy+story;
+454  proc print data=ratingmovie(obs=10) label;
+455      where movie like "&name%";
+456      var user_id movie rating comment;
+457      label movie="&name series";
+458  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+459
+460  proc sort data=ratings out=ratings_sortID;      /*  15d */
+461      by user_id;
+462  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGS_SORTID has 907085 observations and 4 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.34 seconds
+
+
+463
+464  data userinfor;
+465      set ratings_sortID;
+466      keep user_id num_movies total_rating avg_rating ;
+467      by user_id;
+468      retain num_movies total_rating;
+469      if First.user_id then num_movies=0;
+470      num_movies+1;
+471      if First.user_id then total_rating=0;
+472       total_rating+rating;
+473      if Last.user_id;
+474
+475      avg_rating=total_rating/num_movies;
+476      drop total_rating;
+477
+478  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+NOTE: There were 907085 observations read from the data set WORK.RATINGS_SORTID.
+NOTE: The data set WORK.USERINFOR has 516020 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.10 seconds
+
+
+479  proc print data=userinfor(obs=5);
+480  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.03 seconds
+
+
+481  proc means data=userinfor;
+482  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.32 seconds
+
+
+483  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+484
+485  proc import datafile="&outpath\ratings.csv"
+486      dbms=csv out=ratings;
+487  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+488
+
+
+489  proc contents data=ratings;
+490  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+491
+492  proc print data=ratings(obs=10);
+493      var user_id movie rating;
+494      format user_id COMMA15.;
+495  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+496
+497  data ratingmovie;
+498      set ratings;
+499      drop VAR1;
+500      if rating=5 then comment="excellent";
+501      else if rating=4 then comment="good";
+502      else if rating=3 then comment="medium";
+503      else if rating=2 then comment="not good";
+504      else if rating=1 then comment="bad";
+505  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+506
+507  proc print data=ratingmovie(obs=10);
+508  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+509
+510  %let name=toy+story;
+511  proc print data=ratingmovie(obs=10) label;
+512      where movie like "&name%";
+513      var user_id movie rating comment;
+514      label movie="&name series";
+515  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+516
+517
+518  data userinfor;
+519      set ratings;
+520      keep user_id num_movies total_rating avg_rating ;
+521      by user_id;
+522      retain num_movies total_rating;
+523      if First.user_id then num_movies=0;
+524      num_movies+1;
+525      if First.user_id then total_rating=0;
+526       total_rating+rating;
+527      if Last.user_id;
+528
+529      avg_rating=total_rating/num_movies;
+530      drop total_rating;
+531
+532  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+ERROR: BY variables are not properly sorted on data set WORK.RATINGS.
+VAR1=1 user_id=906340 movie=the+warlords+2007 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=1
+total_rating=4 avg_rating=. _ERROR_=1 _N_=2
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: There were 3 observations read from the data set WORK.RATINGS.
+WARNING: The data set WORK.USERINFOR may be incomplete.  When this step was stopped there were 1
+         observations and 3 variables.
+WARNING: Data set WORK.USERINFOR was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+533  proc sort data=userinfor out=userinfor_sort;        /*  15d */
+534      by num_movies;
+535  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: The data set WORK.USERINFOR_SORT has 516020 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.12 seconds
+
+
+536
+537  proc print data=userinfor_sort(obs=5);
+538  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+539  proc means data=userinfor_sort;
+540  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.32 seconds
+
+
+541  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+542
+543  proc import datafile="&outpath\ratings.csv"
+544      dbms=csv out=ratings;
+545  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+546
+
+
+547  proc contents data=ratings;
+548  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+549
+550  proc print data=ratings(obs=10);
+551      var user_id movie rating;
+552      format user_id COMMA15.;
+553  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+554
+555  data ratingmovie;
+556      set ratings;
+557      drop VAR1;
+558      if rating=5 then comment="excellent";
+559      else if rating=4 then comment="good";
+560      else if rating=3 then comment="medium";
+561      else if rating=2 then comment="not good";
+562      else if rating=1 then comment="bad";
+563  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+564
+565  proc print data=ratingmovie(obs=10);
+566  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+567
+568  %let name=toy+story;
+569  proc print data=ratingmovie(obs=10) label;
+570      where movie like "&name%";
+571      var user_id movie rating comment;
+572      label movie="&name series";
+573  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+574
+575
+576  data userinfor;
+577      set ratings;
+578      keep user_id num_movies total_rating avg_rating ;
+579      by user_id;
+580      retain num_movies total_rating;
+581      if First.user_id then num_movies=0;
+582      num_movies+1;
+583      if First.user_id then total_rating=0;
+584       total_rating+rating;
+585      if Last.user_id;
+586
+587      avg_rating=total_rating/num_movies;
+588      drop total_rating;
+589
+590  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+ERROR: BY variables are not properly sorted on data set WORK.RATINGS.
+VAR1=1 user_id=906340 movie=the+warlords+2007 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=1
+total_rating=4 avg_rating=. _ERROR_=1 _N_=2
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: There were 3 observations read from the data set WORK.RATINGS.
+WARNING: The data set WORK.USERINFOR may be incomplete.  When this step was stopped there were 1
+         observations and 3 variables.
+WARNING: Data set WORK.USERINFOR was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+591  proc sort data=userinfor out=userinfor_sort descending;
+                                                 ----------
+                                                 22
+                                                 202
+ERROR 22-322: Syntax error, expecting one of the following: ;, (, ASCII, BUFFNO, DANISH, DATA,
+              DATECOPY, DETAILS, DIAG, DUPOUT, EBCDIC, EQUALS, FINNISH, FORCE, IN, ISA, L, LEAVE,
+              LIST, MESSAGE, MSG, NATIONAL, NODUP, NODUPKEY, NODUPKEYS, NODUPLICATE, NODUPLICATES,
+              NODUPREC, NODUPRECS, NODUPS, NOEQUALS, NORWEGIAN, NOTHREADS, NOUNIKEY, NOUNIKEYS,
+              NOUNIQUEKEY, NOUNIQUEKEYS, NOUNIQUEREC, NOUNIQUERECS, NOUNIREC, NOUNIRECS, OSA, OUT,
+              OVERWRITE, PAGESIZE, PRESORTED, PSIZE, REVERSE, SIZE, SORTSEQ, SORTSIZE, SORTWKNO,
+              SWEDISH, T, TAGSORT, TECH, TECHNIQUE, TESTHSI, THREADS, UNIOUT, UNIQUEOUT, WKNO,
+              WORKNO.
+ERROR 202-322: The option or parameter is not recognized and will be ignored.
+592      by num_movies;
+593  run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING: The data set WORK.USERINFOR_SORT may be incomplete.  When this step was stopped there were 0
+         observations and 0 variables.
+WARNING: Data set WORK.USERINFOR_SORT was not replaced because this step was stopped.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+594
+
+
+595  proc print data=userinfor_sort(obs=5);
+596  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+597  proc means data=userinfor_sort;
+598  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.31 seconds
+
+
+599  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+600
+601  proc import datafile="&outpath\ratings.csv"
+602      dbms=csv out=ratings;
+603  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+604
+
+
+605  proc contents data=ratings;
+606  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+607
+608  proc print data=ratings(obs=10);
+609      var user_id movie rating;
+610      format user_id COMMA15.;
+611  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+
+
+612
+613  data ratingmovie;
+614      set ratings;
+615      drop VAR1;
+616      if rating=5 then comment="excellent";
+617      else if rating=4 then comment="good";
+618      else if rating=3 then comment="medium";
+619      else if rating=2 then comment="not good";
+620      else if rating=1 then comment="bad";
+621  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.09 seconds
+
+
+622
+623  proc print data=ratingmovie(obs=10);
+624  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+625
+626  %let name=toy+story;
+627  proc print data=ratingmovie(obs=10) label;
+628      where movie like "&name%";
+629      var user_id movie rating comment;
+630      label movie="&name series";
+631  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+632
+633
+634  data userinfor;
+635      set ratings;
+636      keep user_id num_movies total_rating avg_rating ;
+637      by user_id;
+638      retain num_movies total_rating;
+639      if First.user_id then num_movies=0;
+640      num_movies+1;
+641      if First.user_id then total_rating=0;
+642       total_rating+rating;
+643      if Last.user_id;
+644
+645      avg_rating=total_rating/num_movies;
+646      drop total_rating;
+647
+648  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+ERROR: BY variables are not properly sorted on data set WORK.RATINGS.
+VAR1=1 user_id=906340 movie=the+warlords+2007 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=1
+total_rating=4 avg_rating=. _ERROR_=1 _N_=2
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: There were 3 observations read from the data set WORK.RATINGS.
+WARNING: The data set WORK.USERINFOR may be incomplete.  When this step was stopped there were 1
+         observations and 3 variables.
+WARNING: Data set WORK.USERINFOR was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+649  proc sort data=userinfor out=userinfor_sort;
+650      by descending num_movies;
+651  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: The data set WORK.USERINFOR_SORT has 516020 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.17 seconds
+
+
+652
+653  proc print data=userinfor_sort(obs=5);
+654  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+655  proc means data=userinfor_sort;
+656  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.26 seconds
+
+
+657  data userinfor;
+658      set ratings;
+659      keep user_id num_movies total_rating avg_rating ;
+660      by user_id;
+661      retain num_movies total_rating;
+662      if First.user_id then num_movies=0;
+663      num_movies+1;
+664      if First.user_id then total_rating=0;
+665       total_rating+rating;
+666      if Last.user_id;
+667
+668      avg_rating=total_rating/num_movies;
+669      drop total_rating;
+670
+671  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+ERROR: BY variables are not properly sorted on data set WORK.RATINGS.
+VAR1=1 user_id=906340 movie=the+warlords+2007 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=1
+total_rating=4 avg_rating=. _ERROR_=1 _N_=2
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: There were 3 observations read from the data set WORK.RATINGS.
+WARNING: The data set WORK.USERINFOR may be incomplete.  When this step was stopped there were 1
+         observations and 3 variables.
+WARNING: Data set WORK.USERINFOR was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+
+672  proc sort data=userinfor out=userinfor_sort;
+673      by descending num_movies;
+674  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: The data set WORK.USERINFOR_SORT has 516020 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.12 seconds
+
+
+675
+676  proc print data=userinfor_sort(obs=5);
+677  run;
+
+NOTE: There were 5 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+678  proc means data=userinfor_sort;
+679  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.34 seconds
+
+
+680  %let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+681
+682  proc import datafile="&outpath\ratings.csv"
+683      dbms=csv out=ratings;
+684  run;
+
+NOTE: Import cancelled.  Output dataset WORK.RATINGS already exists.  Specify REPLACE option to
+      overwrite it.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+
+685
+
+
+686  proc contents data=ratings;
+687  run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+688
+689  proc print data=ratings(obs=10);
+690      var user_id movie rating;
+691      format user_id COMMA15.;
+692  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGS.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+693
+694  data ratingmovie;
+695      set ratings;
+696      drop VAR1;
+697      if rating=5 then comment="excellent";
+698      else if rating=4 then comment="good";
+699      else if rating=3 then comment="medium";
+700      else if rating=2 then comment="not good";
+701      else if rating=1 then comment="bad";
+702  run;
+
+NOTE: There were 907085 observations read from the data set WORK.RATINGS.
+NOTE: The data set WORK.RATINGMOVIE has 907085 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.11 seconds
+
+
+703
+704  proc print data=ratingmovie(obs=10);
+705  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+706
+707  %let name=toy+story;
+708  proc print data=ratingmovie(obs=10) label;
+709      where movie like "&name%";
+710      var user_id movie rating comment;
+711      label movie="&name series";
+712  run;
+
+NOTE: There were 10 observations read from the data set WORK.RATINGMOVIE.
+      WHERE movie like 'toy+story%';
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+713
+714
+715  data userinfor;
+716      set ratings;
+717      keep user_id num_movies total_rating avg_rating ;
+718      by user_id;
+719      retain num_movies total_rating;
+720      if First.user_id then num_movies=0;
+721      num_movies+1;
+722      if First.user_id then total_rating=0;
+723       total_rating+rating;
+724      if Last.user_id;
+725
+726      avg_rating=total_rating/num_movies;
+727      drop total_rating;
+728
+729  run;
+
+WARNING: The variable total_rating in the DROP, KEEP, or RENAME list has never been referenced.
+ERROR: BY variables are not properly sorted on data set WORK.RATINGS.
+VAR1=1 user_id=906340 movie=the+warlords+2007 rating=3 FIRST.user_id=1 LAST.user_id=1 num_movies=1
+total_rating=4 avg_rating=. _ERROR_=1 _N_=2
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: There were 3 observations read from the data set WORK.RATINGS.
+WARNING: The data set WORK.USERINFOR may be incomplete.  When this step was stopped there were 1
+         observations and 3 variables.
+WARNING: Data set WORK.USERINFOR was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+730  proc sort data=userinfor out=userinfor_sort;
+731      by descending num_movies;
+732  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR.
+NOTE: The data set WORK.USERINFOR_SORT has 516020 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.18 seconds
+
+
+733
+734  proc print data=userinfor_sort(obs=10);
+735  run;
+
+NOTE: There were 10 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+
+
+736  proc means data=userinfor_sort;
+737  run;
+
+NOTE: There were 516020 observations read from the data set WORK.USERINFOR_SORT.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.32 seconds
+
+
