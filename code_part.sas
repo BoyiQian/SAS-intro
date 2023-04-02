@@ -1,4 +1,4 @@
-%let outpath=D:\CMU\Spring 2023\AI ENG\SAS demo;
+%let outpath=<your path>;
 
 proc import datafile="&outpath\ratings.csv"
 	dbms=csv out=ratings;
